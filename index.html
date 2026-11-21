@@ -37,8 +37,6 @@
     --border: #2e3340;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0;
     background: var(--bg);
@@ -1988,7 +1986,7 @@ function pick() {
 function scrollToHash() {
   const id = decodeURIComponent(location.hash.replace(/^#/, ""));
   const el = id && document.getElementById(id);
-  if (el) el.scrollIntoView();
+  if (el) el.scrollIntoView({ block: "start", behavior: "instant" });
 }
 
 const select = document.getElementById("lang");
