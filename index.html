@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bingey — Terms of Service and Privacy Policy</title>
+<meta name="description" content="Terms of Service, Privacy Policy and child safety standards of the Bingey Android app, in 13 languages.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --blue: #2B4A8C;
+    --yellow: #C9A227;
+    --red: #E3161F;
+    --bg: #f7f8fb;
+    --surface: #ffffff;
+    --text: #1a1c22;
+    --muted: #565b67;
+    --accent: #2B4A8C;
+    --border: #dfe3ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12141a;
+      --surface: #1b1e26;
+      --text: #e8eaf0;
+      --muted: #a4a9b6;
+      --accent: #9db6ec;
+      --border: #2e3340;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12141a;
+    --surface: #1b1e26;
+    --text: #e8eaf0;
+    --muted: #a4a9b6;
+    --accent: #9db6ec;
+    --border: #2e3340;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-text-size-adjust: 100%;
+    overflow-wrap: break-word;
+  }
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: .6rem 16px;
+  }
+  .bar::after {
+    /* Bingey's three colours as a thin stripe under the bar */
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue) 0 33.3%, var(--yellow) 33.3% 66.6%, var(--red) 66.6% 100%);
+  }
+  .bar-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .lang { display: flex; align-items: center; gap: .4rem; }
+  .lang span { font-size: 1rem; }
+  select {
+    font: inherit;
+    font-size: .9rem;
+    padding: .35rem 2rem .35rem .6rem;
+    min-height: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 15px) 55%, calc(100% - 10px) 55%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+  }
+  a:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.25rem 16px 5rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 .35rem;
+    letter-spacing: -0.02em;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: .95rem;
+    margin: 0 0 2rem;
+  }
+  h2 {
+    font-size: 1.45rem;
+    line-height: 1.3;
+    margin: 0 0 1rem;
+    letter-spacing: -0.015em;
+    padding-left: .75rem;
+    border-left: 5px solid var(--blue);
+  }
+  #privacy h2 { border-left-color: var(--yellow); }
+  #child-safety h2 { border-left-color: var(--red); }
+  h3 {
+    font-size: 1.08rem;
+    line-height: 1.4;
+    margin: 1.9rem 0 .5rem;
+  }
+  section {
+    margin-top: 3rem;
+    scroll-margin-top: 4.5rem;
+  }
+  h3[id] { scroll-margin-top: 4.5rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: .45rem; }
+  a { color: var(--accent); }
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--yellow);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .callout p { margin: 0; }
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .75rem 1.25rem;
+  }
+  .toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+  .toc li { margin: 0; }
+  .toc a { display: inline-block; padding: .35rem 0; font-weight: 600; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .9rem;
+  }
+  footer p { margin: .25rem 0; }
+  /* CJK and Devanagari need a touch more line height to breathe */
+  html[lang="ja"] body, html[lang="ko"] body, html[lang="hi"] body {
+    line-height: 1.85;
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="#top">Bingey</a>
+    <label class="lang"><span aria-hidden="true">🌐</span>
+      <select id="lang" aria-label="Language"></select>
+    </label>
+  </div>
+</div>
+
+<!--
+  English is the source text and lives directly in <main>, so the page works without
+  JavaScript and #terms / #privacy resolve natively. Each translation is a <template>
+  below with exactly the same structure and ids. Edit English first, then every template.
+-->
+<main id="doc" data-label="English" data-title="Bingey — Terms of Service and Privacy Policy">
+  <h1 id="top">Bingey: Terms of Service and Privacy Policy</h1>
+  <p class="sub">Last updated: 21 November 2026</p>
+
+  <p>Thank you for using Bingey! You've probably come across films, series, books and games that were pure works of art, and you won't want to watch, read or play them just once. Bingey collects these favourites in one place, so you can binge them again when you feel nostalgic. Bingey is also a small social app: you can recommend what you love to your friends, and see what they recommend to you.</p>
+  <p>Bingey is a free side project by Jashvant Sewmangal. It isn't updated very often, but please report any bugs you come across to <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a>.</p>
+
+  <div class="callout"><p><strong>In short:</strong> Bingey is free, shows no ads and doesn't track you. You sign in with Google or Facebook. Your lists are stored encrypted on your phone and synced to your account, and your friends can see them. You can delete your account and its data in Settings at any time.</p></div>
+
+  <nav class="toc" aria-label="On this page">
+    <ul>
+      <li><a href="#terms">Terms of Service</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#child-safety">Child safety</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="terms" aria-labelledby="terms-h">
+    <h2 id="terms-h">Terms of Service</h2>
+    <p>These terms apply when you use the Bingey app for Android. By creating an account or using Bingey, you agree to them. If you don't agree, please don't use the app.</p>
+
+    <h3>A free side project</h3>
+    <p>Bingey is free. It has no ads, no subscriptions and no in-app purchases. Because it is a side project, I can't promise that it will always be available or free of bugs. Features may change, and the service may stop.</p>
+
+    <h3>Your account</h3>
+    <p>You sign in with your Google or Facebook account; there is no separate Bingey password. Keep that account secure, because anyone who can sign in to it can use your Bingey account. You can delete your Bingey account at any time in Settings.</p>
+
+    <h3>What you add</h3>
+    <p>You are responsible for what you add to Bingey: list items, ratings, notes, tags, images, your username and your profile photo. Your friends can see it, and what you add to BingeBase can be seen by every Bingey user. Don't add anything that:</p>
+    <ul>
+      <li>sexualises, exploits or endangers children in any way (see <a href="#child-safety">Child safety</a>);</li>
+      <li>is sexually explicit, violent, hateful, harassing or threatening;</li>
+      <li>is illegal, or infringes someone else's copyright, trademark or privacy;</li>
+      <li>pretends to be someone else, or is spam.</li>
+    </ul>
+    <p>Don't try to break, overload or get around the security of Bingey or of other people's accounts.</p>
+
+    <h3>BingeBase, the shared catalogue</h3>
+    <p>Every item in Bingey links to an entry in BingeBase, a catalogue of films, series, books and games shared by all users. Entries come from TMDB, Google Books, MangaDex and IGDB, or are added by users. When you create an item yourself, you choose whether to add it to BingeBase for everyone. A public BingeBase entry stays in the catalogue after you delete your account, because other people's lists can link to it. Your own changes to an item (for example a different title or poster), your rating and your notes are stored with your account, not in BingeBase.</p>
+
+    <h3>Removing content and accounts</h3>
+    <p>I may remove content, or close accounts, that break these terms. Content that involves the sexual abuse or exploitation of children is removed and reported to the authorities.</p>
+
+    <h3>Information from other services</h3>
+    <p>Titles, summaries, posters and other details come from <a href="https://www.themoviedb.org/">TMDB</a>, <a href="https://books.google.com/">Google Books</a>, <a href="https://mangadex.org/">MangaDex</a> and <a href="https://www.igdb.com/">IGDB</a>. They belong to their owners, and those services' own terms apply to them. This product uses the TMDB API but is not endorsed or certified by TMDB. Bingey is not affiliated with any of these services.</p>
+
+    <h3>No warranty</h3>
+    <p>Bingey is provided "as is", without any warranty. As far as the law allows, I'm not liable for any loss or damage that results from using Bingey, including lost lists. This doesn't limit any rights you have under the law of your country that can't be waived.</p>
+
+    <h3>Changes to these terms</h3>
+    <p>When these terms change, the new version is posted on this page with a new date. If you keep using Bingey after that, you accept the new terms.</p>
+  </section>
+
+  <section id="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">Privacy Policy</h2>
+    <p>This policy explains what Bingey stores about you, where it is stored, who can see it and how you delete it. Bingey is developed by Jashvant Sewmangal, who is responsible for your data (the "data controller"). You can reach me at <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a>.</p>
+
+    <h3>What Bingey stores</h3>
+    <ul>
+      <li><strong>Your account.</strong> When you sign in with Google or Facebook, Bingey receives your name, e-mail address and profile photo from that account, and Firebase gives your account a user ID. Bingey never sees your Google or Facebook password.</li>
+      <li><strong>Your profile.</strong> Your username, profile photo and profile colour.</li>
+      <li><strong>Your lists.</strong> The films, series, books and games you add, with your rating, the date you added them, your notes and tags, your own changes to an item's details, and any images you upload.</li>
+      <li><strong>Your friends.</strong> The friend requests you send and receive, and who your friends and best friends are.</li>
+      <li><strong>Your recent additions.</strong> A short feed of what you added recently, which your friends see.</li>
+      <li><strong>Notification tokens.</strong> A token for each phone you use Bingey on, so that it can receive push notifications.</li>
+      <li><strong>Crash reports.</strong> If the app crashes, Firebase Crashlytics sends a report with technical details: phone model, Android version, app version and where in the app the error happened. These reports are used only to fix bugs.</li>
+      <li><strong>Settings.</strong> Your app settings, such as theme and language. They stay on your phone.</li>
+    </ul>
+    <p>Bingey doesn't collect your location, contacts, calendar, microphone or camera. To show where you can watch or buy an item, it uses your phone's country, read from the SIM card or mobile network without any location permission.</p>
+
+    <h3>Where it is stored</h3>
+    <ul>
+      <li><strong>On your phone, encrypted.</strong> Bingey keeps your lists in a database on your phone that is encrypted with a 256-bit key, which is protected by the Android Keystore. The app works offline from this copy. The database and its key are left out of Android backups.</li>
+      <li><strong>In Firebase.</strong> Bingey syncs your data to Google Firebase, so that it is the same on every phone you sign in on: Firebase Authentication (your account), Realtime Database (your profile, lists, friends and recent additions), Cloud Firestore (notification tokens), Cloud Storage (images), and Cloud Functions and Cloud Messaging (notifications). Data travels over encrypted connections. Google processes this data on Bingey's behalf under the <a href="https://firebase.google.com/support/privacy">Firebase privacy and security terms</a>, and may store it on servers outside your country.</li>
+    </ul>
+
+    <h3>BingeBase</h3>
+    <p>An item in your list links to its BingeBase entry, which holds the shared details such as title, year, summary and poster. Every Bingey user can see BingeBase entries, and an entry records which account added it. What is yours (your rating, notes and tags, and any changes you make to the details) stays with your account and is never written to BingeBase.</p>
+
+    <h3>Who can see your data</h3>
+    <ul>
+      <li><strong>Every Bingey user</strong> can see your username, profile photo and profile colour, so that friends can find you, and the BingeBase entries you added.</li>
+      <li><strong>Your friends</strong>, once you have both accepted a friend request, can see your profile (including the e-mail address of your Google or Facebook account), your lists with your ratings and notes, and your recent additions.</li>
+      <li><strong>Nobody else.</strong> I don't sell your data, share it with advertisers or use it for anything other than running Bingey. I only look at stored data when that is needed to fix a problem, to handle a report, or when the law requires it.</li>
+    </ul>
+
+    <h3>Searching and other services</h3>
+    <p>When you search for a film, series, book or game, or open its details, Bingey sends your search text or the item's ID to TMDB, Google Books, MangaDex or IGDB, and loads posters and other images from them. Your country is sent along to show where to watch or buy an item. These requests don't include your name, e-mail address or account, but like any website these services see your phone's IP address. Their own privacy policies apply.</p>
+
+    <h3>Push notifications</h3>
+    <p>Bingey sends push notifications through Firebase Cloud Messaging when someone sends you a friend request or accepts yours, and when your friends add something. Android asks for your permission first, and you can turn each kind of notification off in your phone's settings.</p>
+
+    <h3>No ads, no tracking</h3>
+    <p>Bingey shows no ads. It contains no advertising or analytics SDKs, doesn't use your advertising ID and doesn't track you across apps or websites. Earlier versions of Bingey showed ads; Bingey 3.0 removed them.</p>
+
+    <h3 id="delete-account">Deleting your account and data</h3>
+    <p>Your data is kept for as long as you have a Bingey account. To delete it, open <strong>Settings</strong> in Bingey and choose <strong>Delete account</strong>. This deletes your Bingey account and the data linked to it: your profile, lists, friend connections, uploaded images and notification tokens, from Firebase and from the phone you delete it on. You also disappear from your friends' friend lists.</p>
+    <p>Two things are not deleted: public BingeBase entries you added, because other people's lists can link to them (they hold only the item's details, never your rating or notes), and crash reports, which Firebase deletes automatically after 90 days.</p>
+    <p>Uninstalling Bingey removes its data from that phone, but not your account. If you can't open the app, e-mail <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a> from the address of your Google or Facebook account, and I'll delete your account for you. If you signed in with Facebook, you can also remove Bingey under <em>Apps and websites</em> in your Facebook settings; that stops Facebook sharing data with Bingey, but doesn't delete your Bingey account.</p>
+
+    <h3>Your rights</h3>
+    <p>You can see and correct almost everything in the app itself. You can also ask for a copy of your data, ask me to correct or delete it, or object to how it's used, by e-mailing <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a>. Bingey processes your data to provide the app to you under these terms, and processes crash reports because of a legitimate interest in fixing bugs. If you live in the EU or the UK, you can also complain to your data protection authority.</p>
+
+    <h3>Children</h3>
+    <p>Bingey is not directed at children under 13 and doesn't knowingly collect their data. If you believe a child under 13 has a Bingey account, e-mail <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a> and the account will be deleted.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>When this policy changes, the updated version is posted on this page with a new date. If a future version of Bingey collects new kinds of data, this policy is updated before that version is released.</p>
+  </section>
+
+  <section id="child-safety" aria-labelledby="child-safety-h">
+    <h2 id="child-safety-h">Child safety standards</h2>
+    <p>Bingey is committed to a safe and respectful environment for all users. Child safety is taken very seriously: child sexual abuse material (CSAM) and every other form of child sexual abuse and exploitation (CSAE) are strictly prohibited.</p>
+    <ul>
+      <li><strong>How Bingey works.</strong> Users share lists of their favourite films, series, books and games. Bingey has no chat, private messages or comments. People only see each other's lists after both have accepted a friend request; anyone else sees only a username, profile photo and profile colour.</li>
+      <li><strong>What is prohibited.</strong> Any content that sexualises, exploits or endangers children, in usernames, profile photos, images, notes, tags or BingeBase entries, and any attempt to use Bingey to contact or groom children.</li>
+      <li><strong>Review and removal.</strong> Bingey complies fully with Google Play's policies. Every reported or detected violation is reviewed immediately: the content is removed, the account is closed, and CSAM is reported to the relevant authorities.</li>
+      <li><strong>How to report.</strong> If you come across content that concerns you, e-mail <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a> with the username and what you saw. Reports are handled confidentially. If a child is in immediate danger, contact your local emergency services.</li>
+      <li><strong>Child safety contact.</strong> Jashvant Sewmangal, <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a>.</li>
+    </ul>
+    <p>Thank you for helping to keep the Bingey community safe.</p>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <p>Questions about these terms, your privacy or child safety, or a bug to report? E-mail <a href="mailto:jashvantdeveloper@gmail.com">jashvantdeveloper@gmail.com</a>. Bingey is developed by Jashvant Sewmangal.</p>
+  </section>
+
+  <footer>
+    <p>Bingey: your favourite films, series, books and games, shared with friends.</p>
+    <p>This page sets no cookies and loads nothing from other websites. It only remembers your language choice in this browser.</p>
+  </footer>
+</main>
+
+<!-- TRANSLATIONS -->
+
+<script>
+// Locale keys in the order of the dropdown. "en" is the <main> above; every other key is
+// a <template id="l-KEY">. Keys match the app's locales.
+const ORDER = ["en", "nl", "de", "fr", "es", "it", "pt", "pl", "tr", "ru", "ja", "ko", "hi"];
+const STORE = "bingey-legal-lang";
+const doc = document.getElementById("doc");
+const english = { html: doc.innerHTML, label: doc.dataset.label, title: doc.dataset.title };
+
+function source(key) {
+  if (key === "en") return english;
+  const tpl = document.getElementById("l-" + key);
+  return tpl && { html: tpl.innerHTML, label: tpl.dataset.label, title: tpl.dataset.title };
+}
+
+const available = ORDER.filter(function (k) { return source(k); });
+
+function render(key) {
+  const s = source(key) || english;
+  doc.innerHTML = s.html;
+  document.documentElement.lang = key;
+  document.title = s.title;
+}
+
+function pick() {
+  // 1. ?lang=nl in the URL wins, so a link can open one language. The hash is kept for
+  //    the sections (#terms, #privacy, #child-safety) the app links to.
+  const fromQuery = new URLSearchParams(location.search).get("lang");
+  if (fromQuery && available.indexOf(fromQuery) >= 0) return fromQuery;
+
+  // 2. Then a choice this visitor made before.
+  try {
+    const saved = localStorage.getItem(STORE);
+    if (saved && available.indexOf(saved) >= 0) return saved;
+  } catch (e) { /* private mode or blocked storage: fall through */ }
+
+  // 3. Otherwise the browser's languages, most preferred first.
+  const prefs = navigator.languages || [navigator.language || "en"];
+  for (const raw of prefs) {
+    const base = String(raw).toLowerCase().split("-")[0];
+    if (available.indexOf(base) >= 0) return base;
+  }
+  return "en";
+}
+
+function scrollToHash() {
+  const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const el = id && document.getElementById(id);
+  if (el) el.scrollIntoView();
+}
+
+const select = document.getElementById("lang");
+select.innerHTML = available.map(function (k) {
+  return "<option value=\"" + k + "\" lang=\"" + k + "\">" + source(k).label + "</option>";
+}).join("");
+
+function setLang(key, remember) {
+  if (key !== "en" || doc.innerHTML !== english.html) render(key);
+  select.value = key;
+  if (remember) {
+    try { localStorage.setItem(STORE, key); } catch (e) { /* ignore */ }
+    const url = new URL(location.href);
+    url.searchParams.set("lang", key);
+    history.replaceState(null, "", url);
+  }
+}
+
+select.addEventListener("change", function () {
+  setLang(select.value, true);
+});
+
+const initial = pick();
+setLang(initial, false);
+// The content was replaced after the browser looked for #terms or #privacy, so jump again.
+if (initial !== "en") scrollToHash();
+</script>
+</body>
+</html>
